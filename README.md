@@ -15,16 +15,19 @@ Server-side JavaScript is becoming more prevalent in the industry, with web fram
 
 
 # What you'll learn
-The basics of how the World Wide Web allows browsers to send and retrieve web content
-Web browser internals, the Document Object Model (DOM), and jQuery
-How to create dynamic, interactive web pages using JavaScript
-Techniques for creating data-driven websites using modern web technologies 
-Client-side JavaScript libraries and frameworks
-Server-side JavaScript application architecture, middleware, HTTP, and RESTful API design
+- The basics of how the World Wide Web allows browsers to send and retrieve web content
+- Web browser internals, the Document Object Model (DOM), and jQuery
+- How to create dynamic, interactive web pages using JavaScript
+- Techniques for creating data-driven websites using modern web technologies 
+- Client-side JavaScript libraries and frameworks
+- Server-side JavaScript application architecture, middleware, HTTP, and RESTful API design
 
 
 # Syllabus
 Week 1: Web Programming Basics
+
 Week 2: Using JavaScript to Create Dynamic Web Pages
+
 Week 3: Client-Side Frameworks for Developing Modular Web Page Components
+
 Week 4: Building Scalable Web Apps with Server-Side JavaScript
