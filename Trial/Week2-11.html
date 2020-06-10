@@ -1,0 +1,86 @@
+<p><strong> bold item list example using jquery library </strong></p>
+<html><head><script src="jquery.js"></script></head> <body>
+<ul> 
+	<li>dog</li> 
+	<li>cat</li> 
+	<li>elephant</li> 
+	<li>bear</li> 
+</ul>
+<script>
+	$('li').click(function() { 
+		$(this).css('font-weight', 'bold');
+	});
+	$('li').mouseenter(function() { 
+		$(this).css('color', 'red'); 
+		$(this).css('font-size', '120%');
+	});
+	$('li').mouseleave(function() { 
+		$(this).css('color', 'black'); 
+		$(this).css('font-size', '100%');
+});
+</script></body></html>
+<p><strong> bold item list example using jquery library using hover function</strong></p>
+<html><head><script src="jquery.js"></script></head> <body>
+<ul> 
+	<li>zook</li> 
+	<li>elfeel</li> 
+</ul>
+<script>
+	$('li').hover( 
+		function() {
+			$(this).css('color', 'red');
+			$(this).css('font-size', '120%'); },
+		function() { 
+			$(this).css('color', 'black');
+			$(this).css('font-size', '100%'); 
+		});
+</script></body></html>
+<p><strong> bold item list example using jquery library using on function</strong></p>
+<html><head><script src="jquery.js"></script></head> <body>
+<ul> 
+	<li>lolo</li> 
+	<li>lololo</li> 
+	<!-- creating special element in a class -->
+	<li class="highlight">canary</li> 
+	<li class="highlight">eagle</li>
+</ul>
+<script>
+	$('li.highlight').on({ // applying the function on the class named highlight only 
+		mouseenter: function() { 
+			$(this).css('color', 'red');
+			$(this).css('font-size', '120%'); 
+		},
+		mouseleave: function() { 
+			$(this).css('color', 'black');
+			$(this).css('font-size', '100%'); 
+		},
+		click: function() {
+		$(this).css('background-color', 'yellow'); 
+		}
+	});
+</script></body></html>
+<p><strong> bold item list example using jquery library using on function</strong></p>
+<html><head><script src="jquery.js"></script></head> <body>
+<ul> 
+	<li>lolo</li> 
+	<li>lololo</li> 
+</ul>
+<ul class="highlight">
+	<li class="highlight">canary</li> 
+	<li class="highlight">eagle</li>
+</ul>
+<script>
+	$("ul.highlight").find("li").on({ 
+		mouseenter: function() { 
+			$(this).css('color', 'red');
+			$(this).css('font-size', '120%'); 
+		},
+		mouseleave: function() { 
+			$(this).css('color', 'black');
+			$(this).css('font-size', '100%'); 
+		},
+		click: function() {
+		$(this).css('background-color', 'yellow'); 
+		}
+	});
+</script></body></html>

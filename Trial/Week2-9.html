@@ -1,0 +1,45 @@
+<p><strong> Event example using js properties </strong></p>
+<html> <body>
+	<!-- create a button, its id name is clickMe, its browser name is Click Me!-->
+	<button id="clickMe"> Click Me! </button>
+	<p> <!-- defualt value of innerHTML numClicks is (0 times)-->
+	You've clicked the button <span id="numClicks"> 0 times </span>. 
+	<script>
+		var clicks = 0;
+		function clickHandler() {
+			clicks++;
+			var numClicksSpan = document.getElementById('numClicks'); 
+			if (clicks == 1) {
+				numClicksSpan.innerHTML = 'once';
+			} else {
+				numClicksSpan.innerHTML = clicks + ' times'; 
+			}
+		}
+		var button = document.getElementById('clickMe'); 
+		// The addEventListener() method attaches an event handler(click event) to the specified element(clickHandler) function.
+		button.addEventListener('click', clickHandler);
+	</script>
+</body> </html>
+
+<p><strong> Event example using jquery library </strong></p>
+<html><head><script src="jquery.js"></script></head><body>
+	<button id="newclickMe">Click Me please!</button>
+	<p>
+	You've clicked the button <span id="newnumClicks">0 times</span>.
+	<script>
+		var newclicks = 0;
+		function newclickHandler() {
+			newclicks++;
+			var newnumClicksSpan = $('#newnumClicks'); 
+			if (newclicks == 1) {
+				newnumClicksSpan.html ('once'); 
+			} else {
+				newnumClicksSpan.html (newclicks + ' times'); 
+			}
+		}
+		//var newbutton = $('#newclickMe'); 
+		//newbutton.click(newclickHandler);
+		//or 
+		$('#newclickMe').click(newclickHandler);
+	</script>
+</body> </html>

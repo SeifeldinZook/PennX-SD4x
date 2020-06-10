@@ -1,0 +1,64 @@
+<p># Example 1</p>
+<html> 
+<body>
+	<div>
+	The current date/time is <span id="dateTime"> </span>.
+	</div>
+	<script>
+		var dateTimeField = document.getElementById('dateTime'); 
+		dateTimeField.innerHTML = new Date();
+	</script>
+</body> 
+</html>
+
+<p># Example 2</p>
+<!DOCTYPE html>
+<html>
+	<div>
+		<!-- innerHTML name is: report -->
+		You have visited this page <span id="report"> </span> times.
+	</div>
+	<script>
+		var timesVisited = 0;
+		//LocalStorage is a type of web storage that allows Javascript websites and apps to store and access data right in the browser with no expiration date. This means the data stored in the browser will persist even after the browser window has been closed.
+		if (localStorage.timesVisited) {   // if the global variable local storage has a property called timesVisted
+			timesVisited = parseInt(localStorage.timesVisited);
+			// 1.read timesVisited from localStorage(localStorage.timesVisited) 2.convert it into integer (parseInt) 3.store it to timesVisited
+		}
+		timesVisited += 1; // increment timesVisted to show that the broweser has been visited
+		// then, write that value in the localstorage using (setItem)
+		localStorage.setItem('timesVisited', timesVisited); 
+		var report = document.getElementById('report');
+		report.innerHTML = timesVisited;
+		if (timesVisited > 10) report.style.backgroundColor = 'red';
+	</script>
+</html>
+
+<p># Example 3</p>
+<!DOCTYPE html>
+<html>
+	<!-- if you named the innerHTML report again it wil not work -->
+	You have accessed this page <span id="ya hamo"> </span> times. <p>
+	Your last visit was <span id="lastVisitDate"> </span>.
+	<script>
+		var timesVisited2 = 0;
+		var lastVisitDate = 'never';
+
+		//all lines from 49 to 53 is reading the JSON object out of localStorage
+		// .1.read lastVisit OBJECT from localStorage(localStorage.lastVisit) .2.converted back to an object via JSON.parse .3.store it to lastVist .4. Access to numvisits property in the lastVisit object(lastVisit.numVisits) and stored to timesVisited2 .5.Access to date property in the lastVisit (llastVisit.date) and stored to lastVisitDate
+		if (localStorage.lastVisit) {
+				var lastVisit = JSON.parse(localStorage.lastVisit); 
+				timesVisited2 = lastVisit.numVisits;
+				lastVisitDate = lastVisit.date;
+			}
+		// now we are ready modify the innerHTML content
+		document.getElementById('lastVisitDate').innerHTML = lastVisitDate;
+		timesVisited2++; 
+		document.getElementById('ya hamo').innerHTML = timesVisited2;
+		// if we stopped coding here, it will run one time. so,
+		var myLastVisit = { }       // creating an empty object
+		myLastVisit.date = new Date();  // give it a date property
+		myLastVisit.numVisits = timesVisited2; // give it a visit property
+		localStorage.lastVisit = JSON.stringify(myLastVisit); 
+	</script>
+</html>

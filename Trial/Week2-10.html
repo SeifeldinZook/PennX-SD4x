@@ -1,0 +1,30 @@
+<p><strong> list example using js properties </strong></p>
+<html> <body>
+	<input id="nameInput"></input><p>
+	<ul><span id="list"><!-- empty list.innerHTML --></span></ul>
+	<script>
+		function nameHandler(btngan) { 
+		if (btngan.keyCode == 13) { // 13 is the Enter key
+			var nameInput = document.getElementById('nameInput'); 
+			var list = document.getElementById('list'); 
+			list.innerHTML = '<li>' + nameInput.value + '</li>';
+			nameInput.value = [];
+		} 
+	}
+		document.addEventListener('keyup', nameHandler);
+	</script>
+</body> </html>
+<p><strong> list example using jquery library </strong></p>
+<html><head><script src="jquery.js"></script></head><body>
+	<input id="itemField"></input> <p>
+	<ul><span id="list2"></span></ul>
+	<script>
+		function keyPressHandler(e) {
+		if (e.keyCode == 13) {
+			$('#list2').append('<li>' + $('#itemField').val() + '</li>');
+			$('#itemField').val(''); 
+			}
+		} 
+			$('#itemField').keyup(keyPressHandler); 
+	</script>
+</body> </html>

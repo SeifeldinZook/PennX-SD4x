@@ -1,0 +1,79 @@
+<p><b> example 0 </b></p>
+<script type="text/javascript">
+	var myArray= ("cars", 12, false);
+	document.write(typeof myArray);
+		document.write("<br>");
+	var age = myArray[1];
+	document.write(age);
+		document.write("<br>");
+	myArray[2] = true;
+	document.write(myArray);
+		document.write("<br>");
+	document.write(myArray.length);
+		document.write("<br>");
+</script>
+<p><b> example 1 </b></p>
+<script type="text/javascript">
+	var myArray= ['cars', 12, false];
+	document.write(typeof myArray);
+		document.write("<br>");
+	var age = myArray[1];
+	document.write(age);
+		document.write("<br>");
+	myArray[2] = true;
+	document.write(myArray);
+		document.write("<br>");
+	document.write(myArray.length);
+		document.write("<br>");
+</script>
+<p><b> example 2 </b></p>
+<script type="text/javascript">
+	var a = ["cat", "dog", "banana"];
+	document.write(typeof a);
+		document.write("<br>"); 
+	document.write(a[4])
+		document.write("<br>");
+	a[4] = "panda";
+	document.write(a[4])
+		document.write("<br>");
+	document.write(a[3])
+		document.write("<br>");
+	a[-5] = "elephant";
+	document.write(a[-4])
+		document.write("<br>");
+	document.write(a)
+</script>
+<p><b> example 3 </b></p>
+<script type="text/javascript">
+	var myArray = ["car", "bike"];
+	myArray.push("scooter");
+	document.write(myArray);
+		document.write("<br>");
+	myArray.unshift("train");
+	document.write(myArray);
+		document.write("<br>");
+	var vehicle = myArray.pop();
+	document.write(vehicle)
+		document.write("<br>");
+	vehicle = myArray.shift();
+	document.write(vehicle)
+		document.write("<br>");
+</script>
+<p><b> example 4 </b></p>
+<script type="text/javascript">
+	var person = {
+	name: "John Doe",
+	age: 25,
+	isMale: true,
+	personality: ["patient", "loyal", "happy"], company: { name: "edX", id: 2984}
+	}
+	document.write(typeof person)
+		document.write("<br>");
+	document.write(person.age);
+		document.write("<br>");
+	document.write(person["company"].id);
+		document.write("<br>");
+	person ["status"] = "good boy";
+	document.write(person.status);
+		document.write("<br>");
+</script>

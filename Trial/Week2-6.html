@@ -1,0 +1,70 @@
+<p><b> Example: Strings</b></p>
+<script type="text/javascript">
+	var name = '   toucan   '; 
+	document.write(name)   
+		document.write("<br>")
+	document.write(typeof name)
+		document.write("<br>")
+	document.write(name.length);
+		document.write("<br>")
+	document.write(name.charAt(3))
+		document.write("<br>")
+	document.write(name[3])
+		document.write("<br>")
+	name[0] = 'r'
+	document.write(name)    //strings are immutable!
+		document.write("<br>")
+	document.write(name.toUpperCase());
+		document.write("<br>")
+		t = name.trim();
+	document.write(t)
+		document.write("<br>")
+	document.write(name.concat('zook'))	
+		document.write("<br>")
+	var myAnimal = 'cat'.concat('mouse');
+	document.write(myAnimal)	
+</script>
+<p><b> Example: Regular Expression</b></p>
+<script type="text/javascript">
+	var status = 'I am working VERY hard';
+	document.write(status , "<br>")
+	document.write(typeof status + "<br>")
+	document.write(status.search(/VERY/) , "<br>") // matches at character 13 
+	document.write(status.search(/very/) + "<br>") // doesnot match (-1) because lower case senstive
+	document.write(status.search(/very/i) + "<br>") // matches bec. i = ignore lower case senstive
+	document.write("**regex’s test function**", "<br>", "it returns boolen")
+	document.write(/script/.test("javascript is so much fun!") , "<br>");
+	document.write(/scr/.test("javascript is so much fun!") , "<br>");
+	document.write(/is s/.test("javascript is so much fun!") , "<br>");
+	document.write(/isso/.test("javascript is so much fun!") , "<br>");
+</script>
+<p><b> Example: Ranges</b></p>
+<script type="text/javascript">
+	var numbers = "5 8 2 5 7 6";
+	document.write(numbers.search(/[012]/), "<br>"); // look for specific characters: search for any 0,1,2 
+	document.write(/[012]/.test(numbers), "<br>");
+	document.write(numbers.search(/[01 29]/), "<br>"); // search for any 0,1, ,2,9
+	document.write(numbers.search(/[a-z]/), "<br>") // look for ranges of characters: search between a to z 
+	document.write(numbers.search(/[0-9]/), "<br>")
+	document.write(numbers.search(/\d/), "<br>") // indicates any digit betweeen 0:9
+	document.write("**combine ranges**", "<br>")
+	var code = "abc123F4e5";
+	document.write(code.search(/[0-9][a-z][0-9]/), "<br>") // search for a digit followed by a lower.c.letter followed by a digit // it returns 7 for char. 4
+	document.write(code.search(/[^0-9a-z]/), "<br>") // search for no digit and no lower.c.letter // it returns 6 for charc.F
+
+</script>
+<p><b> Example: Number function</b></p>
+<script type="text/javascript">
+	var x = true
+	document.write(Number(x))
+	function hamohamo (){
+		return Number(x);
+	} 
+	document.write(hamohamo())
+</script>
+
+
+
+
+
+

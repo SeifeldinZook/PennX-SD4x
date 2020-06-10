@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js"></script>
+<style>
+	.errorText {color: red;}
+	.errorBox {border: 2px solid red;}
+	.goodBox {border: 2px solid green;}
+</style> 
+</head>
+<body>
+	<input type="password" name="password"></input> <br>
+	<span id="errorMessage" class="errorText" hidden> <!--hidden is property that hide the id at first time-->
+		Please fix the following errors:</span> 
+	<ul>
+		<li id="needsNumber" class="errorText" hidden> The password must contain a number</li>
+		<li id="atLeast10Chars" class="errorText" hidden>The passsword must be at least 10 characters long</li>
+	</ul>
+	<span id="successMessage" hidden>The password is okay!</span> <p>
+	<button name="submit">Validate Password</button>
+	
+	<script type="text/javascript">
+		$("button[name='submit']").click(function() {
+			var passwordField = $("input[name='password']"); 
+			var password = passwordField.val();
+			var isOkay = true;
+			if (password.length < 10) {
+				isOkay = false;
+				$('#atLeast10Chars').show();
+			}
+			if (/\d/.test(password) == false) { // \D metacharacter is used to find a non-digit character.
+				isOkay = false;
+				$('#needsNumber').show();
+			}
+			if (isOkay == false) {
+				$('#successMessage').hide();
+				$('#errorMessage').show(); 
+				passwordField.removeClass("goodBox").addClass("errorBox");
+			} else {
+				$('.errorText').hide();
+				$('#successMessage').show(); 
+				passwordField.removeClass("errorBox").addClass("goodBox");
+			}
+			return false;
+		});
+	</script>
+</body>
+</html>

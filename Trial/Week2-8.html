@@ -1,0 +1,73 @@
+<html> <body>
+	<!-- create a button, its id name is clickMe, its browser name is Click Me!-->
+	<button id="clickMe"> Click Me! </button>
+	<p> <!-- defualt value of innerHTML numClicks is (0 times)-->
+	You've clicked the button <span id="numClicks"> 0 times </span>. 
+	<script>
+		var clicks = 0;
+		function clickHandler() {
+			clicks++;
+			var numClicksSpan = document.getElementById('numClicks'); 
+			if (clicks == 1)
+				numClicksSpan.innerHTML = 'once'; else
+				numClicksSpan.innerHTML = clicks + ' times'; 
+		}
+		var button = document.getElementById('clickMe'); 
+		// The addEventListener() method attaches an event handler(click event) to the specified element(clickHandler) function.
+		button.addEventListener('click', clickHandler);
+	</script>
+</body> </html>
+<p><strong> New Example </strong></p>
+<html>
+ 	<!-- only one element in the entire html page can have this id-->
+	<div id="mouseOverMe"> Put the mouse here! </div> <p>
+	<!-- multiple elements in the entire html page can be the class-->
+	<div class="highlightText"> This is some text. </div> <p> <!-- this is the 1st element in the class -->
+	<div> This is some other text. </div> <p>
+	<div class="highlightText"> This text is important, too.</div> <!-- this is the 2nd element in the class -->
+	<script>
+		function makeBold() {
+			// read all the elemnts in the class (highlightText) and store them in divs
+			// divs is not an array, it is "object HTMLCollection" and its type is object
+			// divs.length is 2, which are the number of <div class="highlightText"> created
+			var divs = document.getElementsByClassName('highlightText'); 
+			for (var i = 0; i < divs.length; i++) {
+				divs[i].style.color = 'red';
+				divs[i].style.fontWeight = 'bold'; 
+			}
+		}
+		function restore() {
+			var divs = document.getElementsByClassName('highlightText'); 
+				for (var i = 0; i < divs.length; i++) {
+				divs[i].style.color = 'black';
+				divs[i].style.fontWeight = 'normal'; 
+			}
+		}
+		var mouseOverMeDiv = document.getElementById('mouseOverMe'); 
+		// The addEventListener() method attaches an event handler(mouseover event)&(mouseout event) to the specified element(makeBold)&(restore) functions.
+		mouseOverMeDiv.addEventListener('mouseover', makeBold);
+		mouseOverMeDiv.addEventListener('mouseout', restore);
+	</script>
+</html>
+<p><strong> New Example </strong></p>
+<html> <body>
+	<input id="nameInput"></input><p>
+	<!-- defualt value of innerHTML nameField is (guest)-->
+	Hello, <span id="nameField"> guest </span>.
+	<script>
+		function nameHandler(btngan) { 
+		// The keyCode property returns the Unicode character code of the key that triggered the onkeypress event, or the Unicode key code of the key that triggered the onkeydown or onkeyup event.
+		//Character codes - A number which represents an ASCII character
+		//Key codes - A number which represents an actual key on the keyboard
+		// ex: "w", "W", which is "119", "87"
+		if (btngan.keyCode == 13) { // 13 is the Enter key
+			var nameInput = document.getElementById('nameInput'); 
+			var nameField = document.getElementById('nameField'); 
+			nameField.innerHTML = nameInput.value; 
+			nameField.style.backgroundColor = 'red'; 
+			nameField.style.textTransform = 'capitalize';
+		} 
+	}
+		document.addEventListener('keyup', nameHandler);
+	</script>
+</body> </html>
